@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}{{ profile.surname }} {{ profile.name }}{% endblock title %}
+
+{% block page_title %}Профиль{% endblock page_title %}
+
+{% block content %}
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header">
+                Profile.objects.get(id={{ profile.id }})
+            </div>
+            <div class="card-body">
+                <p class="card-title h3">{{ profile.surname }} {{ profile.name }}</p>
+                <p class="card-subtitle h5">{{ profile.email_address }}</p>
+                {% if user.is_authenticated and user.profile != profile %}
+                    <button class="btn btn-primary mt-3">
+                        Подписаться
+                    </button>
+                {% elif user.profile != profile %}
+                    <button class="btn btn-primary mt-3 disabled">
+                        Войдите чтобы подписаться
+                    </button>
+                {% endif %}
+                <div class="container mt-3">
+                    <div class="row justify-content-around text-center">
+                        <div class="col-auto">
+                            <a class="btn btn-outline-secondary">
+                                Подписки - {{ profile.follows.count }}
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a class="btn btn-outline-secondary">
+                                Подписчики - {{ profile.followers.count }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

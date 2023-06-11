@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Регистрация{% endblock title %}
+
+{% block page_title %}Регистрация{% endblock page_title %}
+
+{% block content %}
+
+    <div class="col-6">
+        <div class="card">
+            <header class="card-header">
+                new_user = User(
+            </header>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <label for="id-username" class="input-group-text">username=</label>
+                            <input type="text" class="form-control" id="id-username" name="username" placeholder="Логин">
+                        </div>
+                        <div class="form-text">Используется вместе с паролем для входа в аккаунт</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <label for="id-password" class="input-group-text">password=</label>
+                            <input type="password" class="form-control" id="id-password" name="password" placeholder="Пароль">
+                        </div>
+                        <div class="form-text">Вводи-вводи, мы не подглядываем!</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <label for="id-surname" class="input-group-text">surname=</label>
+                            <input type="text" class="form-control" id="id-surname" name="surname" placeholder="Фамилия">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <label for="id-name" class="input-group-text">name=</label>
+                            <input type="text" class="form-control" id="id-name" name="name" placeholder="Имя">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <label for="id-email" class="input-group-text">email=</label>
+                            <input type="email" class="form-control" id="id-email" name="email_address" placeholder="Адрес электронной почты">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                </form>
+            </div>
+            <footer class="card-footer">
+                )
+            </footer>
+        </div>
+    </div>
+
+{% endblock content %}
